@@ -15,3 +15,4 @@ Requirements:
 
 ### fonts
 [Fonts:](https://github.com/ryanoasis/nerd-fonts/): Liberation Mono Powerline
+* *Droid Sans Mono* seems to work out of the box with debian konsole
