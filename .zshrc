@@ -57,12 +57,18 @@ HIST_STAMPS="dd.mm.yyyy"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
     cp
+    extract
     git gitignore
     web-search
-    python pylint pip fabric
+    python pylint pip pyenv
+    history-substring-search
     colorize colored-man-pages
-    last-working-dir dirhistory autojump
+    last-working-dir
+    #dirhistory
+    dircycle
+    autojump
     vi-mode
+    zsh-syntax-highlighting
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -75,11 +81,11 @@ source $ZSH/oh-my-zsh.sh
 export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='nvim'
+else
+  export EDITOR='nvim'
+fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -96,8 +102,7 @@ export LANG=en_US.UTF-8
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+bindkey "^I" expand-or-complete-with-dots  # vi plug-in overwrites this
 
 export PATH="$HOME/.local/bin/:$PATH"
 export PATH="/home/andreas/.pyenv/bin:$PATH"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
