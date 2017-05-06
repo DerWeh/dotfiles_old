@@ -61,7 +61,6 @@ plugins=(
     git gitignore
     web-search
     python pylint pip pyenv
-    history-substring-search
     colorize colored-man-pages
     last-working-dir
     #dirhistory
@@ -69,6 +68,7 @@ plugins=(
     autojump
     vi-mode
     zsh-syntax-highlighting
+    history-substring-search  # must be after syntax-highlighting for highlighting
 )
 
 source $ZSH/oh-my-zsh.sh
